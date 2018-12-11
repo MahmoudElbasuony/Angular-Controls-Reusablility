@@ -1,0 +1,83 @@
+<div class="row">
+
+  <div class="col-6 offset-3">
+    <div class="card bg-light">
+
+      <div class="card-header">
+        <h5 class="card-title">{{Title}}</h5>
+      </div>
+      <div class="card-body">
+
+        <form ref-form="ngForm" (submit)="OnSignup(form)">
+
+          <div class="row">
+
+            <div class="col-6">
+              <!-- First Name -->
+              <XP-TextInput Name="FirstName" Title="First Name" Placeholder="First Name" [(Value)]="SignupModel.FirstName"></XP-TextInput>
+            </div>
+
+            <div class="col-6">
+              <!-- Last Name -->
+              <XP-TextInput Name="LastName" Title="Last Name" Placeholder="Last Name" [(Value)]="SignupModel.LastName"></XP-TextInput>
+            </div>
+
+            <div class="col-12">
+              <!-- Email -->
+              <XP-TextInput Type="email" Name="Email" Title="Email" Placeholder="Email" [(Value)]="SignupModel.Email"></XP-TextInput>
+            </div>
+
+            <div class="col-6">
+              <!-- Password -->
+              <XP-TextInput Type="password" Name="Password" Title="Password" Placeholder="Password" [(Value)]="SignupModel.Password"></XP-TextInput>
+            </div>
+
+            <div class="col-6">
+              <!-- Confirm Password -->
+              <XP-TextInput Type="password" Name="ConfirmPassword" Title="Confirm Password" Placeholder="Confirm Password"
+                [(Value)]="SignupModel.ConfirmPassword"></XP-TextInput>
+            </div>
+
+
+
+          </div>
+          <!-- Gender -->
+          <div class="row">
+            <div class="col">
+
+              <label>Gender</label>
+              <hr />
+              <div class="row ">
+
+                <label class="radio-inline col-3 ">
+                  <input type="radio" value="0" name="Gender" [(ngModel)]="SignupModel.Gender"> Male
+                </label>
+                <label class="radio-inline col-3">
+                  <input type="radio" value="1" name="Gender" [(ngModel)]="SignupModel.Gender"> Female
+                </label>
+                <label class="radio-inline col-3">
+                  <input type="radio" value="2" name="Gender" [(ngModel)]="SignupModel.Gender"> Other
+                </label>
+
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col">
+              <!-- Login -->
+              <button class="btn btn-primary float-right"><i class="fa fa-sign-in"></i> Login</button>
+            </div>
+          </div>
+
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

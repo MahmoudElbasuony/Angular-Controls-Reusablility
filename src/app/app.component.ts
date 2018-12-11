@@ -1,3 +1,4 @@
+import { AuthenticationService } from './shared_kernel/services/authentication';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+
+
+  constructor(private authService: AuthenticationService) {
+
+  }
+
+  get IsAuthenticated() {
+    return this.authService.IsAuthenticated;
+  }
+
+
+  SwitchAutheticate() {
+    this.authService.IsAuthenticated = !this.authService.IsAuthenticated;
+  }
 }
